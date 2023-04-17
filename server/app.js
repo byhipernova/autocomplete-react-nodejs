@@ -64,7 +64,7 @@ const trie = new Trie();
     app.get('/', (req, res) => {
         const word = req.query.q.trim();
         if ( word != ""){
-            const results = trie.autocomplete(upperCase(word))
+            const results = trie.autocomplete(upperCase(word)).slice(0,500)
             res.send(results)
         }else{
             res.send([])
