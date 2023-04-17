@@ -52,11 +52,11 @@ const trie = new Trie();
         redirect: 'follow'
     };
 
-    await fetch("https://raw.githubusercontent.com/dominictarr/random-name/master/names.json", requestOptions)
+    await fetch("https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json", requestOptions)
         .then(response => response.json())
         .then(result => {
             result.forEach(word => {
-                trie.addWord(word);
+                trie.addWord(word.name);
             });
         })
         .catch(error => console.log('error', error));
