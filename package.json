@@ -16,7 +16,7 @@
     "start:server" : "yarn workspace server start"
   },
   "engines": {
-    "node": "18.15.0"
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "concurrently": "^6.0.2"
