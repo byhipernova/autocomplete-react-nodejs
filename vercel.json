@@ -14,7 +14,7 @@
       }
     }
   ],
-  "routes": [ 
+  "routes": [
     {
       "src": "/api/(.*)",
       "dest": "server/index.js"
