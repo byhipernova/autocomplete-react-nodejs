@@ -22,6 +22,17 @@ $borderColor: #5f6368;
     flex-direction: column;
     position: relative;
 
+    .resultTime{
+      position: relative;
+      width: 100%;
+      small{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+
     input {
       border: 1px solid $borderColor;
       padding: .75rem 1rem;
@@ -71,7 +82,7 @@ $borderColor: #5f6368;
     }
   }
 
-  .pb-1{
-    padding-bottom: 1rem;
+  .mb-1{
+    margin-bottom: 1rem;
   }
 }

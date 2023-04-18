@@ -46,13 +46,8 @@ class Trie {
 const trie = new Trie();
 
 (async () => {
-    
-    const requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-    };
 
-    await fetch("https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json", requestOptions)
+    await fetch("https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json")
         .then(response => response.json())
         .then(result => {
             result.forEach(word => {

@@ -7,12 +7,14 @@ function App() {
     const [axiosTimer, setAxiosTimer] = useState('')
     const handleChange = (event) => {
         let startTime = Date.now();
-        const query = event.target.value
-        axios.get(`http://localhost:4001?q=${query}`)
-            .then((response) => {
-                axiosTimerFunc(startTime);
-                setData(response.data);
-            })
+        const query = event.target.value.trim()
+        if (query != ""){
+            axios.get(`http://localhost:4001?q=${query}`)
+                .then((response) => {
+                    axiosTimerFunc(startTime);
+                    setData(response.data);
+                })
+        }
     }
     const axiosTimerFunc = (startTime) => {
         let now = Date.now();
@@ -22,9 +24,13 @@ function App() {
     return (
         <div className="App">
             <div className="searchContainer">
-                {data.length > 0 &&
-                    <small className="pb-1">Results generated in {axiosTimer} ms</small>
-                }
+                <div className="resultTime mb-1">
+                    {data.length > 0 ?
+                        <small>Results generated in {axiosTimer} ms</small>
+                        :
+                        <small>Search in 140889 City Name</small>
+                    }
+                </div>
                 <input type="text" onChange={handleChange}/>
                 {data.length > 0 &&
                     <div className="results">
