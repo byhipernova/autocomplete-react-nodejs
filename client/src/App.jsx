@@ -9,11 +9,13 @@ function App() {
         let startTime = Date.now();
         const query = event.target.value.trim()
         if (query != ""){
-            axios.get(`http://localhost:4001?q=${query}`)
+            axios.get(`${import.meta.env.VITE_API_URL}?q=${query}`)
                 .then((response) => {
                     axiosTimerFunc(startTime);
                     setData(response.data);
                 })
+        }else{
+            setData([])
         }
     }
     const axiosTimerFunc = (startTime) => {
